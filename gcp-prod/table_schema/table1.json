@@ -1,0 +1,20 @@
+[
+  {
+    "name": "id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "一意識別子"
+  },
+  {
+    "name": "user_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "ユーザー名"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "作成日時"
+  }
+]

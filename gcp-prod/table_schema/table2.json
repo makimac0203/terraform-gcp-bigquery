@@ -1,0 +1,26 @@
+[
+  {
+    "name": "order_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "注文ID"
+  },
+  {
+    "name": "user_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "ユーザーID"
+  },
+  {
+    "name": "amount",
+    "type": "NUMERIC",
+    "mode": "NULLABLE",
+    "description": "金額"
+  },
+  {
+    "name": "ordered_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "注文日時"
+  }
+]

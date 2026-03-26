@@ -24,7 +24,8 @@ terraform-gcp-bigquery/
 │   └── view_query/              # ビュークエリ SQL
 ├── gcp-staging/                 # 同上（staging 用）
 └── modules/
-    ├── apis.tf                  # GCP API 有効化
+    ├── apis/
+    │   └── apis.tf              # GCP API 有効化
     └── bigquery/
         ├── variables.tf
         ├── dataset.tf           # google_bigquery_dataset リソース

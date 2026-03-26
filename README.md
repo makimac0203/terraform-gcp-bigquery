@@ -29,7 +29,8 @@ terraform-gcp-bigquery/
 │   └── view_query/
 │
 └── modules/
-    ├── apis.tf                  # GCP API 有効化
+    ├── apis/
+    │   └── apis.tf              # GCP API 有効化
     └── bigquery/
         ├── variables.tf         # 入力変数
         ├── dataset.tf           # google_bigquery_dataset リソース

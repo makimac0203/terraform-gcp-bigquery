@@ -35,7 +35,7 @@ provider "google" {
 # API有効化（共通モジュール）
 # --------------------------------------------------
 module "apis" {
-  source     = "../modules"
+  source     = "../modules/apis"
   project_id = local.project_id
 }
 

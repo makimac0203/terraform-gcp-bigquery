@@ -28,14 +28,17 @@ terraform-gcp-bigquery/
 │   ├── table_schema/
 │   └── view_query/
 │
+├── .terraform-docs.yml          # terraform-docs 設定
 └── modules/
     ├── apis/
-    │   └── apis.tf              # GCP API 有効化
+    │   ├── apis.tf              # GCP API 有効化
+    │   └── README.md            # terraform-docs 自動生成
     └── bigquery/
         ├── variables.tf         # 入力変数
         ├── dataset.tf           # google_bigquery_dataset リソース
         ├── table.tf             # google_bigquery_table リソース
-        └── view.tf              # google_bigquery_table (view) リソース
+        ├── view.tf              # google_bigquery_table (view) リソース
+        └── README.md            # terraform-docs 自動生成
 ```
 
 ## セットアップ
@@ -134,6 +137,18 @@ terraform apply
 ```
 
 > `terraform.tfvars` はGit管理外（`.gitignore` 済み）。初回は `terraform.tfvars.example` をコピーして作成すること。
+
+## ドキュメント生成
+
+[terraform-docs](https://terraform-docs.io/) でモジュールの `README.md` を自動生成できる。
+
+```bash
+# 特定モジュール
+terraform-docs modules/bigquery/
+
+# 全モジュールまとめて
+for d in modules/*/; do terraform-docs "$d"; done
+```
 
 ## リソース作成順序
 

@@ -116,6 +116,21 @@ terraform plan
 terraform apply
 ```
 
+## ドキュメント生成 (terraform-docs)
+
+`.terraform-docs.yml` により設定済み。モジュールの `README.md` を更新するには：
+
+```bash
+# 特定モジュール
+terraform-docs modules/bigquery/
+terraform-docs modules/apis/
+
+# 全モジュールまとめて
+for d in modules/*/; do terraform-docs "$d"; done
+```
+
+`modules/*/README.md` は `<!-- BEGIN_TF_DOCS -->` / `<!-- END_TF_DOCS -->` タグ間が自動上書きされる。手書きコメントはタグの外に記述すること。
+
 ## リソース作成順序
 
 Terraform が依存関係を自動解決し、以下の順で作成する。

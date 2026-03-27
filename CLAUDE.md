@@ -20,7 +20,9 @@ terraform-gcp-bigquery/
 │   ├── bigquery_views.tf        # ビュー定義（locals のみ）
 │   ├── terraform.tfvars         # プロジェクトID（Git管理外）
 │   ├── terraform.tfvars.example # tfvars テンプレート（Git管理対象）
-│   ├── table_schema/            # テーブルスキーマ JSON
+│   ├── table_schema/            # テーブルスキーマ JSON（データセット別サブディレクトリ）
+│   │   ├── raw/                 #   raw データセット用
+│   │   └── dwh/                 #   dwh データセット用
 │   └── view_query/              # ビュークエリ SQL
 ├── gcp-staging/                 # 同上（staging 用）
 └── modules/
@@ -54,7 +56,7 @@ locals {
 
 ### テーブル定義
 
-キーは `"dataset_id.table_id"` 形式。スキーマは `table_schema/<table_id>.json`。
+キーは `"dataset_id.table_id"` 形式。スキーマは `table_schema/<dataset_id>/<table_id>.json`。
 
 ```hcl
 # bigquery_tables.tf
@@ -93,7 +95,7 @@ locals {
 
 ### テーブル追加
 
-1. `table_schema/<table_id>.json` を作成
+1. `table_schema/<dataset_id>/<table_id>.json` を作成
 2. `bigquery_tables.tf` の `locals.tables` にエントリを追加
 
 ### ビュー追加

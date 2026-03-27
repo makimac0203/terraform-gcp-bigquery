@@ -7,7 +7,7 @@ resource "google_bigquery_table" "tables" {
 
   description              = each.value.description
   labels                   = merge(each.value.labels, { env = var.environment })
-  schema                   = file("${path.root}/table_schema/${split(".", each.key)[1]}.json")
+  schema                   = file("${path.root}/table_schema/${split(".", each.key)[0]}/${split(".", each.key)[1]}.json")
   deletion_protection      = var.environment == "prod" ? true : false
   require_partition_filter = each.value.require_partition_filter
 

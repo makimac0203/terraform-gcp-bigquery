@@ -4,7 +4,7 @@
 # データセットを追加する場合はこの map にエントリを追加するだけ
 locals {
   datasets = {
-    raw = {description = "取り込み直後の生データ"}
-    dwh = {description = "加工済みデータウェアハウス"}
+    raw = { description = "取り込み直後の生データ" }
+    dwh = { description = "加工済みデータウェアハウス" }
   }
 }

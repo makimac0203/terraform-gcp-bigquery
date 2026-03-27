@@ -10,7 +10,7 @@ resource "google_bigquery_table" "views" {
   deletion_protection = false
 
   view {
-    query          = file("${path.root}/view_query/${split(".", each.key)[1]}.sql")
+    query          = file("${path.root}/view_query/${split(".", each.key)[0]}/${split(".", each.key)[1]}.sql")
     use_legacy_sql = false
   }
 

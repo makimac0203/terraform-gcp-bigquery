@@ -76,7 +76,7 @@ locals {
 
 ### ビュー定義
 
-キーは `"dataset_id.view_id"` 形式。クエリは `view_query/<view_id>.sql`。
+キーは `"dataset_id.view_id"` 形式。クエリは `view_query/<dataset_id>/<view_id>.sql`。
 
 ```hcl
 # bigquery_views.tf
@@ -100,7 +100,7 @@ locals {
 
 ### ビュー追加
 
-1. `view_query/<view_id>.sql` を作成
+1. `view_query/<dataset_id>/<view_id>.sql` を作成
 2. `bigquery_views.tf` の `locals.views` にエントリを追加
 
 ## コマンド
